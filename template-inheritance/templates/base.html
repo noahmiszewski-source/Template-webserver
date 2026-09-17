@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
+	{% block head %}
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{% block heading %}Min webbplats{% endblock %}</title>
+	{% endblock %}
 </head>
 <body>
 	<nav>
-		<a href="{{ url_for('index') }}">Hem</a>
-		<a href="{{ url_for('about') }}">Om</a>
-		<a href="{{ url_for('contact') }}">Kontakt</a>
+		<a href="/">Hem</a>
+		<a href="/about">Om</a>
+		<a href="/contact">Kontakt</a>
 	</nav>
 
-	<main>
-		{% block content %}{% endblock %}
-	</main>
+	<main>{% block content %}{% endblock %}</main>
 
-	<footer>
-		<p>&copy; 2026 Min webbplats</p>
-	</footer>
+	<footer><p>&copy; 2026 Min webbplats</p></footer>
 </body>
 </html>
